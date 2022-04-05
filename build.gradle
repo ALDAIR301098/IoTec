@@ -5,6 +5,11 @@ buildscript {
         lifecycle_version = "2.4.1"
         nav_version = "2.4.1"
         courutines_version = "1.6.0"
+        firebase_version = "29.2.1"
+    }
+
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.10'
     }
 }
 

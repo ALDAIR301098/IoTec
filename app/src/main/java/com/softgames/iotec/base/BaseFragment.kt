@@ -15,13 +15,35 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = getViewBinding(inflater, container)
+        binding = setViewBinding(inflater, container)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        main()
+        recoverData()
+        launchEvents()
+    }
+
+    override fun onPause() {
+        saveTextBoxesData()
+        super.onPause()
+    }
+
+    protected abstract fun setViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
+
+    protected open fun main() {}
+
+    protected open fun recoverData() {}
+
+    protected abstract fun launchEvents()
+
+    protected open fun valideTextBoxes() = false
+
+    protected open fun saveTextBoxesData() {}
 
     fun message(message: String, duration: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(requireContext(), message, duration).show()
     }
-
-    protected abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
 }

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/THEME_SPLASH_SCREEN">
         <activity
-            android:name=".presentation.authentication.login.WelcomeActivity"
+            android:name=".presentation.welcome.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.authentication.login.LoginActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".presentation.authentication.register.view.RegisterActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".presentation.menu.MenuActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
