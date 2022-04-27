@@ -36,12 +36,5 @@ class WelcomeActivity : BaseActivity<ActivityWelcomeBinding>() {
 
         }
 
-        binding.btnRegistro.setOnClickListener {
-            startActivity(
-                Intent(this, RegisterActivity::class.java)
-                    .putExtra(C_USER_TYPE, USER_TYPE.TEACHER)
-            )
-        }
-
     }
 }
